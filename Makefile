@@ -1,6 +1,6 @@
 KEYDIR = keys
 KEYS = $(wildcard $(KEYDIR)/*)
-STAMP = $(shell date +%Y%m%d-%H:%M:%S)
+STAMP := $(shell date +%Y%m%d-%H:%M:%S)
 
 all: update
 
