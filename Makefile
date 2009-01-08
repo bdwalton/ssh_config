@@ -25,6 +25,7 @@ archive: authorized_keys2 cookies
 cookies/keyupdate: authorized_keys2 cookies $(KEYDIR) $(KEYS)
 	@echo Updating $<
 	@(for k in $(KEYS); do \
+		echo \# $$k; \
 		cat $$k; \
 		echo; \
 	done) > $<.new
@@ -32,8 +33,17 @@ cookies/keyupdate: authorized_keys2 cookies $(KEYDIR) $(KEYS)
 	@chmod 600 $<
 	@touch $@
 
+showdiff: authorized_keys2
+	@( if [ -f $< -a -f $<.$(STAMP) ]; then \
+		cmp -s $< $<.$(STAMP); \
+		if [ $$? -ne 0 ]; then \
+			echo The following changes were made:; \
+			diff -u $<.$(STAMP) $< | grep "[+-]#"; \
+		fi; \
+	fi)
+
 #if the current archive copy is the same, get rid of it.
-cleanup: authorized_keys2
+cleanup: authorized_keys2 showdiff
 	@(cmp -s $< $<.$(STAMP); \
 		if [ $$? -eq 0 ]; then \
 			rm $<.$(STAMP); \
