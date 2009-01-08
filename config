@@ -1,0 +1,36 @@
+HOST blastwave
+  HOSTNAME login.blastwave.org
+
+HOST cswbo
+  HOSTNAME login.bo.opencsw.org
+
+HOST cswgo
+  HOSTNAME build8s.go.opencsw.org
+
+HOST o1 o1.chass o1.chass.utoronto.ca
+  HOSTNAME 128.100.160.2
+
+HOST acct*
+  HOSTNAME acct.cquest.utoronto.ca
+  IdentityFile ~/.ssh/id_dsa_aux
+
+HOST ss-081* ss-079* ss-025 ss-026 ss-027 ss-028 ss-029 ss-03*
+  USER bwalton
+
+#these are all windows boxes.  we typically want to hit them as rootadmin
+HOST ss-* rw-*
+  USER rootadmin
+
+HOST raritan
+  HOSTNAME raritan.chass.utoronto.ca
+  USER dominion
+
+HOST gdr.mine.nu
+  USER bdwalton
+
+HOST netfirms
+  HostName ssh.netfirms.com
+  User psych1
+
+HOST bar.utoronto.ca
+  PORT 34
