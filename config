@@ -34,3 +34,7 @@ HOST netfirms
 
 HOST bar.utoronto.ca
   PORT 34
+
+HOST tramp*
+	User root
+
