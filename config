@@ -38,3 +38,5 @@ HOST bar.utoronto.ca
 HOST tramp*
 	User root
 
+HOST bender
+     HostName www.opencsw.org
