@@ -1,5 +1,3 @@
-HOST blastwave
-  HOSTNAME login.blastwave.org
 
 HOST cswbo
   HOSTNAME login.bo.opencsw.org
