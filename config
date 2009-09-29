@@ -1,3 +1,5 @@
+HOST *.biota *.biota.utoronto.ca
+     PORT 2222
 
 HOST cswbo
   HOSTNAME login.bo.opencsw.org
