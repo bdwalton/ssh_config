@@ -40,3 +40,27 @@ HOST tramp*
 
 HOST bender
      HostName www.opencsw.org
+
+HOST rw-103
+        User rootadmin
+        LocalForward 5901 localhost:5900
+        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
+
+HOST ntdws13
+        User rootadmin
+        ForwardAgent yes
+        ForwardX11 yes
+        LocalForward 5901 localhost:5900
+        #ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc -w1 %h %p'
+        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
+
+HOST es-104
+        ForwardAgent yes
+        ForwardX11 yes
+        LocalForward 5901 localhost:5900
+        #ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc -w1 %h %p'
+        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
+
+HOST ntdws12*
+        ForwardX11 yes
+
