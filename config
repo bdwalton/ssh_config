@@ -61,6 +61,6 @@ HOST es-104
         #ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc -w1 %h %p'
         ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
 
-HOST ntdws12*
+HOST *chass*
         ForwardX11 yes
 
