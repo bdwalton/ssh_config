@@ -1,5 +1,5 @@
-# don't track auth keys directly, instead rely on the individual files in keys/
-authorized_keys*
+*~
+authorized_keys2*
 cookies*
 id_dsa*
 id_rsa*
