@@ -45,7 +45,7 @@ HOST tramp*
 	User root
 
 HOST bender
-     HostName www.opencsw.org
+     HostName bender.opencsw.org
 
 HOST rw-103
         User rootadmin
