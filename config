@@ -1,6 +1,10 @@
 HOST *
 	ForwardX11 yes
 
+HOST mgcp
+     HOSTNAME mothergoosecooperativepreschool.ca
+     USER mgcp
+
 HOST dev1.biota
      PORT 22
 
