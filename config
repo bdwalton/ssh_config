@@ -69,3 +69,6 @@ HOST es-104
         ForwardX11 yes
         LocalForward 5901 localhost:5900
         ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
+
+HOST raphael.artsci
+     USER chassuser
