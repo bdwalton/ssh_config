@@ -72,3 +72,7 @@ HOST es-104
 
 HOST raphael.artsci
      USER chassuser
+
+# Allow agent forwarding from the cswbo buildfarm
+HOST current* unstable*
+     ForwardAgent yes
