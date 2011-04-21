@@ -80,3 +80,10 @@ HOST raphael.artsci
 # Allow agent forwarding from the cswbo buildfarm
 HOST current* unstable*
      ForwardAgent yes
+
+# step through a proxy host...
+HOST baliardo.economics
+	HostName 192.168.100.12
+        ForwardAgent yes
+        ForwardX11 yes
+        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
