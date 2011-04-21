@@ -87,3 +87,9 @@ HOST baliardo.economics
         ForwardAgent yes
         ForwardX11 yes
         ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+
+HOST tarega.economics
+	HostName 192.168.100.9
+        ForwardAgent yes
+        ForwardX11 yes
+        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
