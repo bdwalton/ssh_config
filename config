@@ -70,6 +70,10 @@ HOST es-104
         LocalForward 5901 localhost:5900
         ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
 
+HOST bar
+     HOSTNAME bar.utoronto.ca
+     PORT 34
+
 HOST raphael.artsci
      USER chassuser
 
