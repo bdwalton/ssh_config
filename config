@@ -93,3 +93,21 @@ HOST tarrega.economics
         ForwardAgent yes
         ForwardX11 yes
         ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+
+HOST beta.economics
+	HostName 192.168.100.16
+        ForwardAgent yes
+        ForwardX11 yes
+        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+
+HOST theory.economics
+	HostName 192.168.100.7
+        ForwardAgent yes
+        ForwardX11 yes
+        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+
+HOST backup.economics
+	HostName 192.168.100.6
+        ForwardAgent yes
+        ForwardX11 yes
+        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
