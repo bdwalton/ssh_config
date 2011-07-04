@@ -86,28 +86,28 @@ HOST baliardo.economics
 	HostName 192.168.100.12
         ForwardAgent yes
         ForwardX11 yes
-        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
 
 HOST tarrega.economics
 	HostName 192.168.100.9
         ForwardAgent yes
         ForwardX11 yes
-        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
 
 HOST beta.economics
 	HostName 192.168.100.16
         ForwardAgent yes
         ForwardX11 yes
-        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
 
 HOST theory.economics
 	HostName 192.168.100.7
         ForwardAgent yes
         ForwardX11 yes
-        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
 
 HOST backup.economics
 	HostName 192.168.100.6
         ForwardAgent yes
         ForwardX11 yes
-        ProxyCommand ssh -q -A -X arbor.economics.utoronto.ca 'nc %h %p'
+        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
