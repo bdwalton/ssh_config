@@ -24,6 +24,10 @@ HOST acct*
   HOSTNAME acct.cquest.utoronto.ca
   IdentityFile ~/.ssh/id_dsa_aux
 
+HOST mercury*
+  HOSTNAME mercury.cquest.utoronto.ca
+  IdentityFile ~/.ssh/id_dsa_aux
+
 HOST ss-081* ss-079* ss-025 ss-026 ss-027 ss-028 ss-029 ss-03*
   USER bwalton
 
