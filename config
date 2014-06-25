@@ -10,33 +10,6 @@ HOST gdr.mine.nu
 HOST bender
      HostName bender.opencsw.org
 
-<<<<<<< HEAD
-HOST rw-103
-        User rootadmin
-        LocalForward 5901 localhost:5900
-        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
-
-HOST pearljam
-        User rootadmin
-        ForwardAgent yes
-        ForwardX11 yes
-        LocalForward 5901 localhost:5900
-        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
-
-HOST es-104
-	HostName es-104.cquest.utoronto.ca
-        ForwardAgent yes
-        ForwardX11 yes
-        LocalForward 5901 localhost:5900
-        ProxyCommand ssh -q -A -X login.cquest.utoronto.ca 'nc %h %p'
-
-HOST bar
-     HOSTNAME bar.utoronto.ca
-     PORT 34
-
-HOST raphael.artsci
-     USER chassuser
-
 # Allow agent forwarding from the cswbo buildfarm
 HOST current* unstable*
      ForwardAgent yes
