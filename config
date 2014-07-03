@@ -1,60 +1,16 @@
 HOST *
 	ForwardX11 yes
 
-HOST mgcp
-     HOSTNAME mothergoosecooperativepreschool.ca
-     USER mgcp
-
-HOST dev1.biota
-     PORT 22
-
-HOST *.biota *.biota.utoronto.ca
-     PORT 2222
-
 HOST cswbo
   HOSTNAME login.bo.opencsw.org
-
-HOST cswgo
-  HOSTNAME build8s.go.opencsw.org
-
-HOST o1 o1.chass o1.chass.utoronto.ca
-  HOSTNAME 128.100.160.2
-
-HOST acct*
-  HOSTNAME acct.cquest.utoronto.ca
-  IdentityFile ~/.ssh/id_dsa_aux
-
-HOST mercury*
-  HOSTNAME mercury.cquest.utoronto.ca
-  IdentityFile ~/.ssh/id_dsa_aux
-
-HOST ss-081* ss-079* ss-025 ss-026 ss-027 ss-028 ss-029 ss-03*
-  USER bwalton
-
-#these are all windows boxes.  we typically want to hit them as rootadmin
-HOST ss-* rw-*
-  USER rootadmin
-
-HOST raritan
-  HOSTNAME raritan.chass.utoronto.ca
-  USER dominion
 
 HOST gdr.mine.nu
   USER bdwalton
 
-HOST netfirms
-  HostName ssh.netfirms.com
-  User psych1
-
-HOST bar.utoronto.ca
-  PORT 34
-
-HOST tramp*
-	User root
-
 HOST bender
      HostName bender.opencsw.org
 
+<<<<<<< HEAD
 HOST rw-103
         User rootadmin
         LocalForward 5901 localhost:5900
@@ -84,34 +40,3 @@ HOST raphael.artsci
 # Allow agent forwarding from the cswbo buildfarm
 HOST current* unstable*
      ForwardAgent yes
-
-# step through a proxy host...
-HOST baliardo.economics
-	HostName 192.168.100.12
-        ForwardAgent yes
-        ForwardX11 yes
-        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
-
-HOST tarrega.economics
-	HostName 192.168.100.9
-        ForwardAgent yes
-        ForwardX11 yes
-        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
-
-HOST beta.economics
-	HostName 192.168.100.16
-        ForwardAgent yes
-        ForwardX11 yes
-        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
-
-HOST theory.economics
-	HostName 192.168.100.7
-        ForwardAgent yes
-        ForwardX11 yes
-        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
-
-HOST backup.economics
-	HostName 192.168.100.6
-        ForwardAgent yes
-        ForwardX11 yes
-        ProxyCommand ssh -q -A -X vault.economics.utoronto.ca 'nc %h %p'
