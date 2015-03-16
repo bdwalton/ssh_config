@@ -2,6 +2,7 @@ HOST *
 	ForwardX11 yes
 
 HOST cswbo
+  USER bwalton
   HOSTNAME login.bo.opencsw.org
 
 HOST gdr.mine.nu
