@@ -29,8 +29,8 @@ cookies/keyupdate: authorized_keys2 cookies $(KEYDIR) $(KEYS)
 		cat $$k; \
 		echo; \
 	done) > $<.new
-	@mv $<.new $<
 	@chmod 600 $<
+	@mv $<.new $<
 	@touch $@
 
 showdiff: authorized_keys2
