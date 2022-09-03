@@ -6,9 +6,6 @@ HOST cswbo
      USER bwalton
      HOSTNAME login.bo.opencsw.org
 
-HOST gdr.mine.nu
-     USER bdwalton
-
 HOST bender
      HostName bender.opencsw.org
 
