@@ -1,0 +1,7 @@
+# -*- shell-script -*-
+
+# Give us a stable socket path to point SSH_AUTH_SOCK to in our zshrc
+# when we're connected by ssh.
+if [ -S "${SSH_AUTH_SOCK}" ]; then
+    ln -sf "${SSH_AUTH_SOCK}" "${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
+fi
