@@ -1,6 +1,7 @@
 KEYDIR = keys
 KEYS = $(wildcard $(KEYDIR)/*)
 STAMP := $(shell date +%Y%m%d-%H:%M:%S)
+AUTHKEYS = authorized_keys
 
 all: update
 
@@ -8,21 +9,21 @@ cookies:
 	@mkdir cookies
 
 # just to make sure we always have the file
-authorized_keys2:
+$(AUTHKEYS):
 	@if [ ! -f $@ ]; then \
 		touch $@; \
 		chmod 600 $@; \
 	fi
 
 # keep a backup copy, with a date stamp.
-archive: authorized_keys2 cookies
+archive: $(AUTHKEYS) cookies
 	@if [ -s $< ]; then \
 		cp -p $< $<.$(STAMP); \
 		chmod 600 $<.$(STAMP); \
 	fi
 
 #specifying keydir here catches keys that get rm'd.
-cookies/keyupdate: authorized_keys2 cookies $(KEYDIR) $(KEYS)
+cookies/keyupdate: $(AUTHKEYS) cookies $(KEYDIR) $(KEYS)
 	@echo Updating $<
 	@(for k in $(KEYS); do \
 		echo \# $$k; \
@@ -33,7 +34,7 @@ cookies/keyupdate: authorized_keys2 cookies $(KEYDIR) $(KEYS)
 	@mv $<.new $<
 	@touch $@
 
-showdiff: authorized_keys2
+showdiff: $(AUTHKEYS)
 	@( if [ -f $< -a -f $<.$(STAMP) ]; then \
 		cmp -s $< $<.$(STAMP); \
 		if [ $$? -ne 0 ]; then \
@@ -43,16 +44,15 @@ showdiff: authorized_keys2
 	fi)
 
 #if the current archive copy is the same, get rid of it.
-cleanup: authorized_keys2 showdiff
+cleanup: $(AUTHKEYS) showdiff
 	@(cmp -s $< $<.$(STAMP); \
 		if [ $$? -eq 0 ]; then \
 			rm $<.$(STAMP); \
 		fi )
 
-update: authorized_keys2 archive cookies/keyupdate cleanup
+update: $(AUTHKEYS) archive cookies/keyupdate cleanup
 
 .PHONY: clean
 
 clean:
-	rm -rf cookies authorized_keys2.* archive keyupdate
-
+	rm -rf cookies $(AUTHKEYS)* archive keyupdate
