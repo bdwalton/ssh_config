@@ -1,4 +1,4 @@
-Match host * exec "nc -zw 3 %h 22 >/dev/null 2>&1 || -d100 %h 20000:udp 28118:udp 19005:udp"
+Match host * exec "nc -zw 3 %h 22 >/dev/null 2>&1 || knock -d100 %h 20000:udp 28118:udp 19005:udp"
 
 HOST *
      AddKeysToAgent yes
