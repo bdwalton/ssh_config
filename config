@@ -1,6 +1,5 @@
 HOST *
      AddKeysToAgent yes
-     ForwardX11 yes
 
 HOST hendrix
      ForwardAgent yes
