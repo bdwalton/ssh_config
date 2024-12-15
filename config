@@ -3,7 +3,7 @@ Match canonical host="*benandwen*" exec "nc -zw 3 %h 22 >/dev/null 2>&1 || knock
 HOST *
      AddKeysToAgent yes
 
-HOST hendrix
+HOST hendrix *benandwen*
      ForwardAgent yes
 
 HOST cswbo
